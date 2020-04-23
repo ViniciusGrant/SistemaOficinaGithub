@@ -1,0 +1,465 @@
+﻿
+@{
+    ViewBag.Title = "Clientes";
+    Layout = "~/Views/Shared/_LayoutInterno.cshtml";
+}
+
+<div class="content">
+    <div class="row">
+        @*<div class="col-md-">*@
+        <div class="breadcrumb-line breadcrumb-line-component content-group-lg">
+            <ul class="breadcrumb">
+                <li><a href="@Url.Action("Inicial","Inicial")"><i class="icon-home2 position-left"></i> Home</a></li>
+                <li class="active">Clientes</li>
+                <li class="active">Controle de Clientes</li>
+            </ul>
+
+        </div>
+
+        <!-- Bordered panels title -->
+        @*<div class="row">*@
+        <div class="col-md-12">
+            <div class="panel panel-default border-grey">
+                <div class="panel-heading" style="background-color:#495b6b;">
+                    <h6 class="panel-title" style="color:#ffffff;">MENU</h6>
+
+                </div>
+
+                <div class="panel-body">
+                    <div class="col-md-12 text-center">
+
+                        <button type="button" id="btn-CadastroCliente" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b; color:#ffffff"><i class="icon-html52"></i> <span>Cadastrar</span></button>
+
+                        <button type="button" id="btn-ExcluirClientes" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b; color:#ffffff"><i class="icon-html52"></i> <span> Excluir </span></button>
+
+                        <button type="button" id="btn-ConsultarClientes" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b; color:#ffffff"><i class="icon-html52"></i> <span>Consultar</span></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <!-- Inicio tela cadastro -->
+        <div class="col-md-12" id="divCadastroClientes" hidden="hidden">
+            <div class="panel panel-default border-grey">
+
+
+                <div class="panel-heading" style="background-color:#495b6b;">
+                    <h6 class="panel-title" style="color:#ffffff;">Cadastrar Cliente</h6>
+                    <div class="heading-elements">
+                        <ul class="icons-list" style="color:#ffffff;">
+                            <li><a data-action="collapse"></a></li>
+                            <li><a data-action="reload"></a></li>
+                            <li><a href="#" id="fechardivCadastroClientes"><i class="icon-x"></i> </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="col-md-12  text-center">
+
+                        <button id="btn_pessoaFisica" type="button" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b;"><i class="icon-mention position-left"></i> PESSOA FÍSICA</button>
+
+                        <button id="btn_pessoajuridica" type="button" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b;"><i class="icon-mention position-left"></i> PESSOA JURIDICA</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12" id="divPessoaFisica" hidden="hidden">
+            <div class="panel panel-default border-grey">
+
+
+                <div class="panel-heading" style="background-color:#495b6b;">
+                    <h6 class="panel-title" style="color:#ffffff;">Cadastrar Cliente</h6>
+                    <div class="heading-elements">
+                        <ul class="icons-list" style="color:#ffffff;">
+                            <li><a data-action="collapse"></a></li>
+                            <li><a data-action="reload"></a></li>
+                            <li><a href="#" id="fechardivPessoaFisica"><i class="icon-x"></i> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form action="">
+                        <div class="col-md-12">
+                            <div class="panel-body">
+                                <p style="font-weight:bolder; font-size:25px; text-align:center"> DADOS PESSOAIS </p>
+                                <div class="col-md-8">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+
+                                            <label style="font-weight:bold; font-size:15px;">Nome:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-nomePF" class="form-control" placeholder="Digite o nome completo...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">CPF:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-CPF" class="form-control maxlength" maxlength="11" placeholder="Digite o CPF...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="panel-body">
+                                <p style="font-weight:bolder; font-size:25px; text-align:center"> CONTATO </p>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Celular:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-celPF" class="form-control maxlength" maxlength="11" placeholder="Digite o numero celular...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Telefone fixo:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-telPF" class="form-control maxlength" maxlength="10" placeholder="Digite o numero...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Telefone comercial:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-cmlPF" class="form-control maxlength" maxlength="11" placeholder="Digite o numero...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="panel-body">
+                                <p style="font-weight:bolder; font-size:25px; text-align:center"> ENDEREÇO </p>
+                                <div class="col-md-12">
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">RUA:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-ruaPF" class="form-control" placeholder="Digite o nome da rua...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Número:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-nPF" class="form-control" placeholder="Digite o numero...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Bairro:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-bairro" class="form-control" placeholder="Digite o bairro...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Cidade:</label>
+                                            <div class="col-lg-12">
+                                                <input type="text" id="txt-cidade" class="form-control" placeholder="Digite a cidade...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">UF:</label>
+                                            <div class="col-lg-12">
+                                                <select class="select" id="sel-ufPF" style="font-weight:bolder">
+
+                                                    <option value="">SELECIONE..</option>
+
+                                                    <option value="SP">SP</option>
+                                                    <option value="MG">MG</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                            <br />
+                            <br />
+                            <div class=" col-md-12 text-center">
+                                <button id="btn-cadastrarPF" type="button" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b;"> CADASTRAR </button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Fim tela cadastro -->
+
+        <div class="col-md-12" id="divPessoaJuridica" hidden="hidden">
+            <div class="panel panel-default border-grey">
+
+
+                <div class="panel-heading" style="background-color:#495b6b;">
+                    <h6 class="panel-title" style="color:#ffffff;">Cadastrar Cliente PJ</h6>
+                    <div class="heading-elements">
+                        <ul class="icons-list" style="color:#ffffff;">
+                            <li><a data-action="collapse"></a></li>
+                            <li><a data-action="reload"></a></li>
+                            <li><a href="#" id="fechardivPessoaJuridica"><i class="icon-x"></i> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form action="">
+                        <div class="col-md-12">
+                            <div class="panel-body">
+                                <p style="font-weight:bolder; font-size:25px; text-align:center"> DADOS EMPRESARIAIS </p>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+
+                                            <label style="font-weight:bold; font-size:15px;">Razão social:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-razaoSocial" type="text" class="form-control" placeholder="Digite a razão social...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Nome fantasia:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-nomeFantasia" type="text" class="form-control" placeholder="Digite o nome fantasia...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">CNPJ:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-CNPJ" type="text" class="form-control maxlength" maxlength="14" placeholder="Digite o CNPJ...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="panel-body">
+                                <p style="font-weight:bolder; font-size:25px; text-align:center"> CONTATO </p>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Celular:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-celPJ" type="text" class="form-control maxlength" maxlength="11" placeholder="Digite o numero celular...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Telefone fixo:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-telPJ" type="text" class="form-control maxlength" maxlength="10" placeholder="Digite o numero...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Telefone comercial:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-cmlPJ" type="text" class="form-control maxlength" maxlength="11" placeholder="Digite o numero...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="panel-body">
+                                <p style="font-weight:bolder; font-size:25px; text-align:center"> ENDEREÇO </p>
+                                <div class="col-md-12">
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">RUA:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-ruaPJ" type="text" class="form-control" placeholder="Digite o nome da rua...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Número:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-nPJ" type="text" class="form-control" placeholder="Digite o numero...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Bairro:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-bairroPJ" type="text" class="form-control" placeholder="Digite o bairro...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">Cidade:</label>
+                                            <div class="col-lg-12">
+                                                <input id="txt-cidadePJ" type="text" class="form-control" placeholder="Digite a cidade...">
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label style="font-weight:bold; font-size:15px;">UF:</label>
+                                            <div class="col-lg-12">
+                                                <select class="select" id="sel-ufPj" style="font-weight:bolder">
+
+                                                    <option value="">SELECIONE...</option>
+                                                    <option value="SP">SP</option>
+                                                    <option value="MG">MG</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-12 text-center">
+                                    <br />
+                                    <br />
+
+                                    <button id="btn-cadastrarPJ" type="button" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b;">   CADASTRAR   </button>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <!-- Inicio tela tabela de clientes -->
+
+        <div class="col-md-12" id="divTabelaClientes" hidden="hidden">
+            <div class="panel panel-default border-grey">
+
+
+                <div class="panel-heading" style="background-color:#495b6b;">
+                    <h6 class="panel-title" style="color:#ffffff;">Clientes</h6>
+                    <div class="heading-elements">
+                        <ul class="icons-list" style="color:#ffffff;">
+                            <li><a data-action="collapse"></a></li>
+                            <li><a data-action="reload"></a></li>
+                            <li><a href="#" id="fecharTabelaClientes"><i class="icon-x"></i> </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="panel-body" id="divListaclientes">
+
+
+                    <table id="tblclientes" class="table table-responsive table-hover datatable-clientes">
+                        <thead id="headTblclientes">
+
+                        </thead>
+                        <tbody id="bodyTblclientes"></tbody>
+                    </table>
+
+                    <div class="col-md-12 text-center" id="divbtn-ExcluirClientes" hidden="hidden">
+                        <button id="btn-ExcluirClientesSelec" type="button" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b;" hidden="hidden"> EXCLUIR </button>
+                        <br /><br />
+
+                    </div>
+
+
+                    <div class="col-md-12 text-center">
+
+                        <button id="btn-FecharTblClientes" type="button" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b;"> FECHAR </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Fim tela tabela -->
+
+
+
+
+    </div>
+
+</div>
+
+
+
+

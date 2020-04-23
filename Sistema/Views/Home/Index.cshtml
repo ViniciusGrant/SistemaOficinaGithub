@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+<!-- Simple login form -->
+
+<div class="content">
+    <div class="col-md-12">
+        <div class="panel-body" style=" margin-left:10%; margin-right:10%; margin-top:8%; border-color:; background-color:rgba(10,23,55,0.6);  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.5);border-radius:5px; padding:15px;">
+            <form action="">
+
+                <div class="col-md-12">
+                    <div class="">
+
+                        <h5 class="" style="font-weight:bold; color:whitesmoke;">Acesse ao sistema<small class="display-block" style="font-weight:bold; color:whitesmoke;">Insira as suas credenciais</small></h5>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group has-feedback has-feedback-left" style="top:10px;">
+                        <input id="txtUser" type="text" class="form-control" placeholder="Usuário">
+                        <div class="form-control-feedback">
+                            <i class="icon-user text-muted"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group has-feedback has-feedback-left" style="top:10px;">
+                        <input id="txtSenha" type="password" class="form-control" placeholder="Senha">
+                        <div class="form-control-feedback">
+                            <i class="icon-lock2 text-muted"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group" style="top:10px; margin-left:30%; margin-right:30%">
+
+                        <p><input id="btnEntrarLogin" value="Entrar" type="button" class="btn btn-danger btn-block" placeholder="Entrar"></></p>
+
+                    </div>
+                </div>
+
+                <div hidden="hidden" id="alerta" class="alert alert-danger alert-styled-left alert-bordered">
+                    <button type="button" class="close" data-dismiss="alert"><span>&times;</span><span class="sr-only">Close</span></button>
+                    <span class="text-semibold">Oh snap!</span> Change a few things up and <a href="#" class="alert-link">try submitting again</a>.
+                </div>
+
+
+
+            </form>
+        </div>
+
+    </div>
+    <!-- /simple login form -->
+</div>

@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Usuarios";
+    Layout = "~/Views/Shared/_LayoutInterno.cshtml";
+}
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-">
+            <div class="breadcrumb-line breadcrumb-line-component content-group-lg">
+                <ul class="breadcrumb">
+                    <li><a href="@Url.Action("Inicial","Inicial")"><i class="icon-home2 position-left"></i> Home</a></li>
+                    <li class="active">Clientes</li>
+                    <li class="active">Controle de Clientes</li>
+                </ul>
+
+            </div>
+
+            <!-- Bordered panels title -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default border-grey">
+                        <div class="panel-heading" style="background-color:#495b6b;">
+                            <h6 class="panel-title" style="color:#ffffff;">MENU</h6>
+                            <div class="heading-elements">
+                                <ul class="icons-list" style="color:#ffffff;">
+                                    <li><a data-action="collapse"></a></li>
+                                    <li><a data-action="reload"></a></li>
+                                    <li><a> </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row" style="margin-left:20%">
+
+                                <div class="col col-lg-6">
+                                    <button type="button" class="btn btn-float btn-float-lg" style="background-color:#495b6b; color:#ffffff"><i class="icon-html52"></i> <span>Cadastrar funcionarios</span></button>
+                                </div>
+
+                                <div class="col col-lg-6">
+                                    <button type="button" class="btn btn-float btn-float-lg" style="background-color:#495b6b; color:#ffffff"><i class="icon-html52"></i> <span>Inativar funcionarios</span></button>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

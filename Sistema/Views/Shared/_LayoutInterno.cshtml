@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    @*<meta http-equiv="X-UA-Compatible" content="IE=edge">*@
+    <meta http-equiv="Content-Language" content="pt-br">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Turnery-Systen</title>
+
+    <!-- Global stylesheets -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/colors.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/assets/css/Select.css" rel="stylesheet" type="text/css">
+
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+
+
+    <script type="text/javascript" src="~/Content/assets/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/loaders/blockui.min.js"></script>
+
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+
+    <script type="text/javascript" src="~/Content/assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/ui/moment/moment.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/tables/datatables/datatables.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/tables/datatables/extensions/responsive.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/tables/datatables/extensions/buttons.min.js"></script>
+    @*<script type="text/javascript" src="~/Content/assets/js/plugins/tables/datatables/extensions/select.min.js"></script>*@
+    @*<script type="text/javascript" src="~/Content/assets/js/plugins/tables/datatables/extensions/col_reorder.min.js"></script>*@
+    @*<script type="text/javascript" src="~/Content/assets/js/pages/datatables_extension_select.js"></script>*@
+    @*<script type="text/javascript" src="~/Content/assets/js/pages/datatables_basic.js"></script>*@
+    @*<script type="text/javascript" src="~/Content/assets/js/pages/datatables_extension_reorder.js"></script>*@
+    @*<script type="text/javascript" src="~/Content/assets/js/pages/datatables_api.js"></script>*@
+    <script type="text/javascript" src="~/Content/assets/js/plugins/extensions/contextmenu.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/visualization/sparkline.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/forms/styling/switchery.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/forms/styling/switch.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/visualization/d3/d3.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/pickers/daterangepicker.js"></script>
+    @*<script type="text/javascript" src="~/Content/assets/js/plugins/tables/datatables/extensions/pdfmake/pdfmake.min.js"></script>*@
+    @*<script type="text/javascript" src="~/Content/assets/js/plugins/tables/datatables/extensions/pdfmake/vfs_fonts.min.js"></script>*@
+    <script type="text/javascript" src="~/Content/assets/js/pages/form_select2.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/forms/editable/editable.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/extensions/mockjax.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/uploaders/fileinput/plugins/purify.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/uploaders/fileinput/plugins/sortable.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/uploaders/fileinput/fileinput.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/pages/form_bootstrap_select.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/core/app.js"></script>
+    @*<script type="text/javascript" src="~/Content/assets/js/pages/datatables_extension_buttons_html5.js"></script>*@
+    <script type="text/javascript" src="~/Content/assets/js/pages/form_inputs.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/velocity/velocity.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/velocity/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/buttons/spin.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/plugins/buttons/ladda.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/pages/components_buttons.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/pages/datatables_responsive.js"></script>
+    <!-- /Theme JS files -->
+    <!-- Meus Scripts -->
+    <script src="~/Content/assets/js/myScripts/ScriptGlobal.js"></script>
+    <script src="~/Content/assets/js/myScripts/ADM_Clientes.js"></script>
+    <script src="~/Content/assets/js/myScripts/ADM_Servicos.js"></script>
+    <script src="~/Content/assets/js/myScripts/SweetAlert.js"></script>
+    <!-- /Meus Scripts -->
+
+</head>
+
+
+<body class="" style="background-color:#e0e0e0;">
+
+    <!-- Main navbar -->
+    <div class="navbar navbar-inverse" style="background-color:#495b6b;">
+        <div class="navbar-header">
+
+            <span style="font-family:Impact;font-size:35px;color:#ffd800">Turnery-Systen</span>
+            <ul class="nav navbar-nav visible-xs-block">
+                <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+                <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="navbar-collapse collapse" id="navbar-mobile">
+
+
+            <p class="navbar-text"><span class="label bg-success">Online  </span> </p>
+            <p class="navbar-text"><span> @ViewBag.Dia</span></p>
+            <ul class="nav navbar-nav navbar-right">
+
+
+                <li class="dropdown dropdown-user">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="assets/images/placeholder.jpg" alt="">
+                        <span>Bem Vindo @*@ViewBag.userLogado.Nome_usuario*@</span>
+                        <i class="caret"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-right">
+
+                        <li><a href="@Url.Action("Index","Home")" id="sair"><i class="icon-switch2"></i> Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /main navbar -->
+    <!-- Page container -->
+    <div class="page-container">
+
+        <!-- Page content -->
+        <div class="page-content">
+
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-main" style="background-color:#495b6b; border-color:white;">
+                <div class="sidebar-content">
+
+                    <!-- User menu -->
+                    <div class="sidebar-user">
+                        <div class="category-content">
+                            <div class="media">
+
+
+                                <div class="media-right media-middle">
+                                    <ul class="icons-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /user menu -->
+                    <!-- Main navigation -->
+                    <div class="sidebar-category sidebar-category-visible">
+                        <div class="category-content no-padding">
+                            <ul class="navigation navigation-main navigation-accordion">
+
+                                <!-- Main -->
+                                <li style="color:aliceblue;"><a href="@Url.Action("Inicio","Inicial")"><i class="icon-home4"></i> <span>Home</span></a></li>
+                                <li style="color:aliceblue; text-align:center;" class="navigation-header"><span>MENU</span> <i class="icon-menu" title="Main pages"></i></li>
+
+
+                                <li>
+                                    <a href="#" id="cliente"><i class="icon-cup2"></i> <span style="color:aliceblue;">Clientes</span></a>
+                                    <ul>
+                                        <li><a id="cliente" style="color:aliceblue;" href="@Url.Action("Clientes","Clientes")"><i class="icon-equalizer2"></i>Controle de clientes</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="sistema"><i class="icon-cup2"></i> <span style="color:aliceblue;">Sistema</span></a>
+                                    <ul>
+                                        <li><a id="sistema" style="color:aliceblue;" href="@Url.Action("Usuarios","Usuarios")"><i class="icon-equalizer2"></i>Controle do sistema</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="serviços"><i class="icon-cup2"></i> <span style="color:aliceblue;">Serviços</span></a>
+                                    <ul>
+                                        <li><a id="serviços" style="color:aliceblue;" href="@Url.Action("Serviços","Serviços")"><i class="icon-equalizer2"></i>Controle de serviços</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#" id="financeiro"><i class="icon-cup2"></i> <span style="color:aliceblue;">Financeiro</span></a>
+                                    <ul>
+                                        <li><a id="financeiro" style="color:aliceblue;" href="@Url.Action("Financeiro","Financeiro")"><i class="icon-equalizer2"></i>Controle finanças</a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- /main navigation -->
+
+                </div>
+            </div>
+            <!-- /main sidebar -->
+            <!-- Main content -->
+            <div class="content-wrapper">
+
+                @RenderBody()
+            </div>
+
+
+
+        </div>
+
+        <!-- /main content -->
+
+    </div>
+    <!-- /page content -->
+    <!-- /page container -->
+
+
+
+</body>
+</html>
+
+

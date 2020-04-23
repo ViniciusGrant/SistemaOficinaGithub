@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_TURNERYModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_cliente" />
+          </Key>
+          <Property Name="ID_cliente" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_razaoSocial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CPF_CNPJ" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Nome_fantasia" Type="varchar" MaxLength="20" />
+          <Property Name="Celular" Type="varchar" MaxLength="11" />
+          <Property Name="TelFixo" Type="varchar" MaxLength="11" />
+          <Property Name="TelComercial" Type="varchar" MaxLength="11" />
+          <Property Name="Rua" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numero" Type="smallint" Nullable="false" />
+          <Property Name="Bairro" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Cidade" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UF" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Flag_cliente" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID_usuario" />
+          </Key>
+          <Property Name="ID_usuario" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome_usuario" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CPF_usuario" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Senha_usuario" Type="varchar" MaxLength="20" />
+          <Property Name="Flag_usuario" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_TURNERYModelStoreContainer">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_TURNERYModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="ID_usuario" />
+          </Key>
+          <Property Name="ID_usuario" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPF_usuario" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Senha_usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Flag_usuario" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_TURNERYEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+          <EntitySet Name="CLIENTE" EntityType="DB_TURNERYModel.CLIENTE" />
+          </EntityContainer>
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="ID_cliente" />
+          </Key>
+          <Property Name="ID_cliente" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome_razaoSocial" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPF_CNPJ" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Nome_fantasia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Celular" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="TelFixo" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="TelComercial" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Rua" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Numero" Type="Int16" Nullable="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UF" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Flag_cliente" Type="Boolean" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_TURNERYModelStoreContainer" CdmEntityContainer="DB_TURNERYEntities">
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="DB_TURNERYModel.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="ID_usuario" ColumnName="ID_usuario" />
+                <ScalarProperty Name="Nome_usuario" ColumnName="Nome_usuario" />
+                <ScalarProperty Name="CPF_usuario" ColumnName="CPF_usuario" />
+                <ScalarProperty Name="Senha_usuario" ColumnName="Senha_usuario" />
+                <ScalarProperty Name="Flag_usuario" ColumnName="Flag_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="DB_TURNERYModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="Flag_cliente" ColumnName="Flag_cliente" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Rua" ColumnName="Rua" />
+                <ScalarProperty Name="TelComercial" ColumnName="TelComercial" />
+                <ScalarProperty Name="TelFixo" ColumnName="TelFixo" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Nome_fantasia" ColumnName="Nome_fantasia" />
+                <ScalarProperty Name="CPF_CNPJ" ColumnName="CPF_CNPJ" />
+                <ScalarProperty Name="Nome_razaoSocial" ColumnName="Nome_razaoSocial" />
+                <ScalarProperty Name="ID_cliente" ColumnName="ID_cliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
