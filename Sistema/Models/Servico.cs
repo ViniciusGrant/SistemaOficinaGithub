@@ -11,7 +11,7 @@ namespace Sistema.Models
         public string DescricaoServico { get; set; }
         public string IdCliente { get; set; }
         public string IdServico { get; set; }
-
+        public string data { get; set; }
         public string ValorServico { get; set; }
         public string IdentifCliente { get; set; }
         public string teste { get; set; }

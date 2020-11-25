@@ -101,21 +101,23 @@ namespace Sistema.DAL
                 SqlTransaction sTrans = sqlConn.BeginTransaction("DP");
 
 
-                var sql1 = "INSERT INTO [dbo].[SERVICO]([NomeCliente],[DocCliente],[ValorServico],[PagAvista],[Descricao],[Flag]) " +
+                var sql1 = "INSERT INTO [dbo].[SERVICO]([NomeCliente],[DocCliente],[ValorServico],[PagAvista],[Descricao],[DataInclus],[Flag]) " +
                  "VALUES (" + "'" +
                   Pedido.Nome + "'" + "," +
                   doc + "," +
                   Pedido.ValorServico + "," +
                   Pedido.PagamentoTipo + "," + "'" +
                   Pedido.DescricaoServico + "'," +
+                  "'" + Pedido.data + "'" + "," +
                   0 + ")";
 
-                var sql2 = "INSERT INTO [dbo].[SERVICO]([ValorServico],[PagAvista],[Descricao],[Flag]) " +
+                var sql2 = "INSERT INTO [dbo].[SERVICO]([ValorServico],[PagAvista],[Descricao],[DataInclus],[Flag]) " +
                  "VALUES (" +
                   Pedido.ValorServico + "," +
                   Pedido.PagamentoTipo + "," + "'" +
                   Pedido.DescricaoServico + "'," +
-                  0 + ")";
+                  "'" + Pedido.data + "'" + ","+
+                  0 +")";
 
 
 
@@ -161,7 +163,8 @@ namespace Sistema.DAL
 
         {
 
-            var sql = "SELECT[IdServico],[NomeCliente],[DocCliente],[ValorServico],[PagAvista],[Descricao],[Flag] FROM[DB_TURNERY].[dbo].[SERVICO]";
+            var sql = "SELECT[IdServico],[NomeCliente],[DocCliente],[ValorServico],[PagAvista],[Descricao],[DataInclus],[Flag]" +
+                        "FROM [DB_TURNERY].[dbo].[SERVICO]";
 
             using (var conn = new SqlConnection(conexao))
             {
@@ -182,6 +185,8 @@ namespace Sistema.DAL
                         obj.PagamentoTipo = reader["PagAvista"].ToString();
                         obj.DescricaoServico = reader["Descricao"].ToString();
                         obj.flagServico = reader["Flag"].ToString();
+                        obj.data = reader["DataInclus"].ToString();
+
 
 
 

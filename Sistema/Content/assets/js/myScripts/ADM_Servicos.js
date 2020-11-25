@@ -26,6 +26,7 @@ function ListaServiçosEmAberto() {
 
 
         '<th hidden="hidden">Id Servico</th>' +
+        '<th>Data</th>' +
         '<th>Nome</th>' +
         '<th>Cpf / Cnpj</th>' +
         '<th>Valor do Serviço</th>' +
@@ -40,7 +41,6 @@ function ListaServiçosEmAberto() {
     var tblRegistroServico = $(".datatable-servico").dataTable();
 
     tblRegistroServico.fnClearTable(this);
-
     $.each(objretServico, function (i, obj) {
         var pagamento;
         if (obj.PagamentoTipo == "False") {
@@ -53,8 +53,8 @@ function ListaServiçosEmAberto() {
 
             '<tr>' +
 
-
             '<td hidden="hidden">' + obj.IdServico + '</td>' +
+            '<td>' + obj.data.substring(0, 10) + '</td>' +
             '<td>' + obj.Nome + '</td>' +
             '<td>' + obj.IdentifCliente + '</td>' +
             '<td>' + "R$ " + obj.ValorServico + '</td>' +
@@ -86,7 +86,6 @@ function botoes() {
     });
 
     $("#btn-cadastrarServico").unbind("click").click(function () {
-        alert();
         gerarServiçoSemCliente();
 
     });
@@ -146,7 +145,8 @@ function gerarServiçoComCliente(Cliente) {
     });
 
     $("#btn-cadastrarService").unbind("click").click(function () {
-
+        var dataHoje = moment();
+        dataHoje = moment(dataHoje).format('YYYY-MM-DD')
 
         var Servico = {
             IdentifCliente: parseInt($("#txt-DocService").val()),
@@ -155,7 +155,8 @@ function gerarServiçoComCliente(Cliente) {
             ValorServico: $("#txt-ValorServiço").val(),
             PagamentoTipo: $("#drw-tipoPagamento").val(),
             teste: parseInt($("#txt-DocService").val()),
-            DescricaoServico: $("#DescricaoServico").val()
+            DescricaoServico: $("#DescricaoServico").val().toUpperCase(),
+            data: dataHoje
         }
 
         var retorno = capturarRetornoDeReqSinc('POST', 'GravarServico', Servico, erroCCadastrarServico);
@@ -184,6 +185,9 @@ function gerarServiçoSemCliente() {
     $("#painelSelCliente").hide('slow');
     $("#painelCadastrarService").show('slow');
     $("#dadosCliente").hide('fast');
+    var dataHoje = moment();
+    dataHoje = moment(dataHoje).format('YYYY-MM-DD')
+    
 
 
     $("#btn-cadastrarService").unbind("click").click(function () {
@@ -196,7 +200,8 @@ function gerarServiçoSemCliente() {
             ValorServico: $("#txt-ValorServiço").val(),
             PagamentoTipo: $("#drw-tipoPagamento").val(),
             teste: $("#txt-DocService").val(),
-            DescricaoServico: $("#DescricaoServico").val()
+            DescricaoServico: $("#DescricaoServico").val().toUpperCase(),
+            data: dataHoje
         }
 
         var retorno = capturarRetornoDeReqSinc('POST', 'GravarServico', Servico, erroCCadastrarServico);
