@@ -177,6 +177,7 @@
     <Compile Include="Models\PESSOA_JURIDICA.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Servico.cs" />
     <Compile Include="Models\TIPO_CLIENTE.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -2671,6 +2672,7 @@
     <Content Include="Views\Clientes\Clientes.cshtml" />
     <Content Include="Views\Usuarios\Usuarios.cshtml" />
     <Content Include="Views\Servicos\Servicos.cshtml" />
+    <Content Include="Views\Servicos\ServicosConsulta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

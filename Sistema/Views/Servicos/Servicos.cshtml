@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_LayoutInterno.cshtml";
 }
 
+
 <div class="content">
     <div class="row">
         <div class="col-md-">
@@ -16,42 +17,158 @@
 
             </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-default border-grey">
-                        <div class="panel-heading" style="background-color:#495b6b;">
-                            <h6 class="panel-title" style="color:#ffffff;">Cadastro de pedidos</h6>
-                            <div class="heading-elements">
-                                <ul class="icons-list" style="color:#ffffff;">
-                                    <li><a data-action="collapse"></a></li>
-                                    <li><a> </a></li>
-                                </ul>
+            <div class="col-md-12">
+                <div class="panel panel-default border-grey">
+                    <div class="panel-heading" style="background-color:#495b6b;">
+                        <h6 class="panel-title" style="color:#ffffff;">Cadastro de serviços</h6>
+                        <div class="heading-elements">
+                            <ul class="icons-list" style="color:#ffffff;">
+                                <li><a data-action="collapse"></a></li>
+                                <li><a> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel-body" id="painelSelCliente">
+                        <div class="col-md-4  text-center" id="selectCliente">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label style="font-weight:bold; font-size:15px;">Selecione o Cliente existente:</label>
+                                    <select class="select" id="drw-selectCliente" style="font-weight:bolder;"></select>
+                                </div>
                             </div>
                         </div>
-                        <div class="panel-body">
-                            <div class="col-md-5" id="selectCliente">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label style="font-weight:bold; font-size:15px;">Selecione o Cliente:</label>
-                                        <select class="select" id="drw-selectCliente" style="font-weight:bolder;"></select>
+
+                        <div class="col-md-4  text-center">
+
+                            <label style="font-weight:bold; font-size:15px;">Cadastrar novo Cliente:</label>
+                            <br />
+                            <button type="button" id="btn-cadastrarClienteServico" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b; color:#ffffff"><i class="icon-html52"></i> <span>Cadastrar</span></button>
+
+
+                        </div>
+
+                        <div class="col-md-4  text-center">
+
+                            <label style="font-weight:bold; font-size:15px;">Cadastrar serviço sem cliente:</label>
+                            <br />
+                            <button type="button" id="btn-cadastrarServico" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b; color:#ffffff"><i class="icon-html52"></i> <span>Gerar Serviço</span></button>
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div class="panel-body" id="painelCadastrarService" hidden="hidden">
+
+                        <div class="col-md-12"  id="dadosCliente">
+                            <div class="col-md-6">
+                                <div class="form-group">
+
+                                    <label style="font-weight:bold; font-size:15px;">Nome:</label>
+                                    <div class="col-lg-12">
+                                        <input type="text" id="txt-nomeService" class="form-control" disabled>
                                     </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label style="font-weight:bold; font-size:15px;">Documento:</label>
+                                    <div class="col-lg-12">
+                                        <input type="text" id="txt-DocService" class="form-control " disabled>
+                                    </div>
+
                                 </div>
                             </div>
 
                         </div>
 
 
+                        <div class="col-md-12">
+                            <br />
+                            <br />
+                            <div class="form-group col-md-12">
+
+                                <label style="font-weight:bold; font-size:15px;" for="DescricaoServico">Descrição do serviço</label>
+                                <textarea class="form-control" id="DescricaoServico" rows="3"></textarea>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+
+                                    <label style="font-weight:bold; font-size:15px;">Valor a pagar:</label>
+                                    <div class="col-lg-12">
+                                        <input type="number" id="txt-ValorServiço" class="form-control" placeholder="Preencha o valor R$...">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label style="font-weight:bold; font-size:15px;">Tipo de pagamento:</label>
+                                    <div class="col-lg-12">
+                                        <select class="select" id="drw-tipoPagamento" style="font-weight:bolder;">
+                                            <option value="" selected>SELECIONE...</option>
+                                            <option value="0">Á vista</option>
+                                            <option value="1">Pré-datado</option>
+
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
 
 
+                        </div>
+
+                        <div class=" col-md-12 text-center">
+                            <br />
+                            <br />
+                            <button id="btn-cadastrarService" type="button" class="btn btn-primary btn-rounded btn-xlg" style="background-color:#495b6b;"> CADASTRAR </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="panel panel-default border-grey">
+                    <div class="panel-heading" style="background-color:#495b6b;">
+                        <h6 class="panel-title" style="color:#ffffff;">Serviços</h6>
+                        <div class="heading-elements">
+                            <ul class="icons-list" style="color:#ffffff;">
+                                <li><a data-action="collapse"></a></li>
+                                <li><a> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="panel-body" id="divListaservico">
 
 
+                        <table id="tblservico" class="table table-responsive table-hover datatable-column-search-selects datatable-servico">
+                            <thead id="headTblservico">
 
+                            </thead>
+                            <tbody id="bodyTblservico"></tbody>
+                        </table>
 
 
 
                     </div>
                 </div>
+
             </div>
         </div>
+
     </div>
 </div>
+

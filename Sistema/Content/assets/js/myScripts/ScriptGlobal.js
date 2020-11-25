@@ -20,6 +20,27 @@ function requisicaoAssincrona(tipoRequisicao, caminhoMetodo, parametroJson, func
     });
 };
 
+
+
+function capturarRetornoDeReqSinc(tipoRequisicao, caminhoMetodo, parametroJson, funcaoJsErro) {
+    let retorno;
+    $.ajax({
+        type: tipoRequisicao,
+        url: caminhoMetodo,
+        async: false,
+        data: JSON.stringify(parametroJson),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (Json) {
+            retorno = Json;
+        },
+        error: function (Json) {
+            funcaoJsErro(Json);
+        }
+    });
+    return retorno;
+}
+
 function verificaPagina() {
     var h = $(location).attr('href');
     var indice = h.split('/').length - 1;

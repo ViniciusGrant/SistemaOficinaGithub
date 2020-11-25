@@ -8,8 +8,8 @@
         Botoes();
         GravarClientePF();
         GravarClientePJ();
-
-
+        teste();
+       
     }
 
 });
@@ -31,16 +31,16 @@ function Botoes() {
     $("#btn-ExcluirClientes").on("click", function () {
         ObterClientesParaInativacao();
         $("#divbtn-ExcluirClientes").show();
-       
+
     });
 
-    
+
     $("#btn_pessoaFisica").on("click", function () {
         $("#divPessoaFisica").show('slow');
     });
 
     $("#btn_pessoajuridica").on("click", function () {
-  
+
         $("#divPessoaJuridica").show('slow');
     });
 
@@ -91,13 +91,16 @@ function Botoes() {
 
             }
 
-                        requisicaoAssincrona("POST", "../Clientes/ExcluirCliente", InativadorCliente, successExcluirClientes, erroExcluirClientes);
-     
+            requisicaoAssincrona("POST", "../Clientes/ExcluirCliente", InativadorCliente, successExcluirClientes, erroExcluirClientes);
+
         }
 
 
     })
+
     
+
+
 };
 
 function LimparCampos() {
@@ -211,7 +214,6 @@ function GravarClientePJ() {
 
 
     $("#btn-cadastrarPJ").on("click", function () {
-        alert('CHEGOU');
         var idtipoCliente = 2
         var flagCliente = 1
 
@@ -310,7 +312,7 @@ function successListaClientes(Json) {
     $("#headTblclientes").html("");
     cabecalhotblClientes = '<tr  > ' +
 
-       
+
         '<th>Id Cliente</th>' +
         '<th>Nome</th>' +
         '<th>Cpf / Cnpj</th>' +
@@ -319,7 +321,7 @@ function successListaClientes(Json) {
         '<th>Telefone comercial</th>' +
 
         '</tr > ';
-        $("#headTblclientes").append(cabecalhotblClientes);
+    $("#headTblclientes").append(cabecalhotblClientes);
 
     var tblRegistroClientes = $(".datatable-clientes").dataTable();
 
@@ -329,9 +331,9 @@ function successListaClientes(Json) {
 
         conteudotblClientes = conteudotblClientes +
 
-        '<tr>' +
+            '<tr>' +
 
-           
+
             '<td>' + obj.ID_Cliente + '</td>' +
             '<td>' + obj.RazaoSocial + '</td>' +
             '<td>' + obj.CPF_pessoa + '</td>' +
@@ -350,7 +352,7 @@ function successListaClientes(Json) {
 
 
     $("#divTabelaClientes").show(1000);
-    
+
 
 };
 
@@ -437,3 +439,8 @@ function successExcluirClientes(Json) {
 function erroExcluirClientes(Json) {
 
 };
+
+
+function teste() {
+
+}
